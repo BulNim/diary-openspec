@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>한 줄 다이어리</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="min-h-screen bg-stone-100 text-stone-800">
+  <main class="mx-auto max-w-xl px-4 py-12">
+    <h1 class="text-sm font-medium text-stone-500">한 줄 다이어리</h1>
+    <p id="today" class="mt-1 text-3xl font-bold tracking-tight"></p>
+
+    <form id="entry-form" class="mt-6" novalidate>
+      <div class="flex gap-2">
+        <input
+          id="entry-input"
+          type="text"
+          autocomplete="off"
+          placeholder="오늘 한 줄..."
+          aria-label="오늘 한 줄"
+          aria-describedby="entry-warning"
+          class="min-w-0 flex-1 rounded-lg border border-stone-300 bg-white px-4 py-2 focus:border-stone-500 focus:outline-none focus:ring-2 focus:ring-stone-300"
+        >
+        <button
+          type="submit"
+          class="rounded-lg bg-stone-800 px-5 py-2 font-medium text-white hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-stone-400"
+        >저장</button>
+      </div>
+      <p id="entry-warning" role="alert" class="mt-2 hidden text-sm text-red-600"></p>
+    </form>
+
+    <section class="mt-10">
+      <h2 class="text-sm font-medium text-stone-500">기록</h2>
+      <p id="empty-message" class="mt-3 text-stone-400">아직 기록이 없습니다.</p>
+      <ul
+        id="entry-list"
+        class="mt-3 hidden max-h-[calc(15rem+2px)] divide-y divide-stone-200 overflow-y-auto rounded-lg border border-stone-200 bg-white"
+      ></ul>
+    </section>
+  </main>
+</body>
+</html>
